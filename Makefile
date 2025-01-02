@@ -36,8 +36,8 @@ define Package/$(PKG_NAME)/install
     $(INSTALL_DIR) $(1)/usr/bin
     $(INSTALL_BIN) $(SCRIPTS) $(1)/usr/bin/
 
-    $(INSTALL_DIR) $(1)/etc/uci-defaults
-    $(INSTALL_BIN) files/etc/uci-defaults/postinst $(1)/etc/uci-defaults/
+    $(INSTALL_DIR) $(1)/uci-defaults
+    $(INSTALL_BIN) files/uci-defaults/postinst $(1)/uci-defaults/
 endef
 
-$(eval $(call BuildPackage,$(PKG_NAME)))
+$(eval $(call BuildPackage,luci-app-asterisk))

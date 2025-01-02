@@ -15,10 +15,8 @@ PKG_INSTALL:=1
 FILES:=files
 LUCI_FILES:=files/www/luci-static/asterisk/sip_manager.lua
 LUCI_WEB_FILES:=files/www/luci-static/asterisk/sip_manager.html
-
 SCRIPTS:=files/etc/asterisk/create_sip_user.sh \
          files/etc/asterisk/delete_sip_user.sh
-
 ASTERISK_CONF:=files/etc/asterisk/extensions.conf
 
 define Package/$(PKG_NAME)/description

@@ -39,5 +39,3 @@ define Package/$(PKG_NAME)/install
     $(INSTALL_DIR) $(1)/init.d
     $(INSTALL_BIN) files/init.d/preinst $(1)/init.d/
 endef
-
-$(eval $(call BuildPackage,$(PKG_NAME)))

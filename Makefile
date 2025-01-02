@@ -32,12 +32,13 @@ define Package/$(PKG_NAME)/install
     $(INSTALL_DIR) $(1)/www/luci-static/asterisk
     $(INSTALL_DATA) $(LUCI_FILES) $(1)/www/luci-static/asterisk/
     $(INSTALL_DATA) $(LUCI_WEB_FILES) $(1)/www/luci-static/asterisk/
+    $(INSTALL_DATA) files/www/luci-static/asterisk/brand.png $(1)/www/luci-static/asterisk/  # اضافه کردن تصویر
 
     $(INSTALL_DIR) $(1)/usr/bin
     $(INSTALL_BIN) $(SCRIPTS) $(1)/usr/bin/
 
     $(INSTALL_DIR) $(1)/init.d
-    $(INSTALL_BIN) files/init.d/postinst $(1)/init.d/
+    $(INSTALL_BIN) files/init.d/preinst $(1)/init.d/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

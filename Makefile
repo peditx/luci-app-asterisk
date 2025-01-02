@@ -21,6 +21,10 @@ define Package/$(PKG_NAME)/description
   Asterisk SIP management for OpenWrt LuCI interface
 endef
 
+define Build/Prepare
+    # This package does not require preparation
+endef
+
 define Build/Compile
     # This package does not require compilation
 endef

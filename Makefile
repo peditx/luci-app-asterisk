@@ -40,7 +40,4 @@ define Package/$(PKG_NAME)/install
     $(INSTALL_BIN) files/init.d/preinst $(1)/init.d/
 endef
 
-define Build/Compile
-endef
-
 $(eval $(call BuildPackage,$(PKG_NAME)))

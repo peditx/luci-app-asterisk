@@ -37,7 +37,7 @@ define Package/$(PKG_NAME)/install
     $(INSTALL_BIN) $(SCRIPTS) $(1)/usr/bin/
 
     $(INSTALL_DIR) $(1)/init.d
-    $(INSTALL_BIN) files/init.d/preinst $(1)/init.d/
+    $(INSTALL_BIN) files/init.d/postinst $(1)/init.d/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

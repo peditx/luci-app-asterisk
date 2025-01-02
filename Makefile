@@ -25,10 +25,6 @@ define Package/$(PKG_NAME)/description
     Asterisk SIP management for OpenWrt Luci interface
 endef
 
-define Build/Compile
-
-endef
-
 define Package/$(PKG_NAME)/install
 
 

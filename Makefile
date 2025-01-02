@@ -26,24 +26,21 @@ define Package/$(PKG_NAME)/description
 endef
 
 define Package/$(PKG_NAME)/install
-
-
     $(INSTALL_DIR) $(1)/etc/asterisk
     $(INSTALL_DATA) $(ASTERISK_CONF) $(1)/etc/asterisk/
-
 
     $(INSTALL_DIR) $(1)/www/luci-static/asterisk
     $(INSTALL_DATA) $(LUCI_FILES) $(1)/www/luci-static/asterisk/
     $(INSTALL_DATA) $(LUCI_WEB_FILES) $(1)/www/luci-static/asterisk/
 
-
     $(INSTALL_DIR) $(1)/usr/bin
     $(INSTALL_BIN) $(SCRIPTS) $(1)/usr/bin/
 
-
     $(INSTALL_DIR) $(1)/init.d
     $(INSTALL_BIN) files/init.d/preinst $(1)/init.d/
+endef
 
+define Build/Compile
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

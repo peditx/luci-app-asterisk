@@ -5,3 +5,18 @@ PKG_RELEASE:=1
 DEPENDS:=+asterisk +asterisk-pjsip +asterisk-bridge-simple +asterisk-codec-alaw +asterisk-codec-ulaw +asterisk-res-rtp-asterisk
 
 include $(TOPDIR)/rules.mk
+define Package/luci-app-asterisk
+  SECTION:=luci
+  CATEGORY:=LuCI
+  TITLE:=Asterisk Web UI
+  DEPENDS:=$(DEPENDS)
+endef
+
+define Package/luci-app-asterisk/install
+
+    $(INSTALL_DIR) $(1)/etc/asterisk
+
+    $(INSTALL_DATA) ./files/etc/asterisk/extensions.conf $(1)/etc/asterisk/extensions.conf
+endef
+
+$(eval $(call BuildPackage,luci-app-asterisk))

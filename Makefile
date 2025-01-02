@@ -3,6 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=luci-app-asterisk
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
+PKGARCH:=all
 
 PKG_DEPENDS:=asterisk
 

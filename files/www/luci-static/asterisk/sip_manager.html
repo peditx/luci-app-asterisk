@@ -50,6 +50,32 @@
             <button type="submit" name="option" value="4" class="button">Exit</button>
         </form>
     </div>
+http.write([[
+    <html>
+    <head>
+        <title>SIP Server Manager</title>
+    </head>
+    <body>
+        <img src="/path/to/banner.jpg" alt="SIP Banner" />
+        <h1>SIP Users</h1>
+        <ul>
+]])
+
+-- نمایش کاربران
+for _, user in ipairs(users) do
+    http.write("<li>" .. user .. "</li>")
+end
+
+http.write([[
+        </ul>
+        <form method="post">
+            <input type="submit" name="option" value="1" /> New SIP User
+            <input type="submit" name="option" value="2" /> Delete SIP User
+            <input type="submit" name="option" value="3" /> Show Users
+        </form>
+    </body>
+    </html>
+]])
 
 </body>
 </html>

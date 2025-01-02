@@ -21,6 +21,10 @@ define Package/$(PKG_NAME)/description
   Asterisk SIP management for OpenWrt LuCI interface
 endef
 
+define Build/Compile
+    # This package does not require compilation
+endef
+
 define Package/$(PKG_NAME)/install
     # Install Asterisk configuration
     $(INSTALL_DIR) $(1)/etc/asterisk

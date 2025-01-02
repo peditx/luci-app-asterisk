@@ -15,8 +15,10 @@ endef
 define Package/luci-app-asterisk/install
 
     $(INSTALL_DIR) $(1)/etc/asterisk
+    $(INSTALL_DIR) $(1)/etc/init.d
 
     $(INSTALL_DATA) ./files/etc/asterisk/extensions.conf $(1)/etc/asterisk/extensions.conf
+    $(INSTALL_BIN) ./files/etc/init.d/postinst $(1)/etc/init.d/postinst
 endef
 
 $(eval $(call BuildPackage,luci-app-asterisk))

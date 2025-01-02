@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "Running pre-installation steps..."
+
+opkg update
+opkg install asterisk asterisk-pjsip asterisk-bridge-simple asterisk-codec-alaw asterisk-codec-ulaw asterisk-res-rtp-asterisk
+
+echo "[simpletrans]
+type=transport
+protocol=udp
+bind=0.0.0.0
+" >> /etc/asterisk/pjsip.conf
+
+uci set asterisk.general.enabled='1'
+
+service asterisk restart
+
+echo "Pre-installation completed."
+exit 0

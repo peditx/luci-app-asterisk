@@ -76,7 +76,7 @@ jobs:
         run: |
           cd sdk
           echo "make package/luci-app-asterisk/{clean,compile} -j$(nproc)"
-          make package/luci-app-asterisk/{clean,compile} -j$(nproc)
+          make package/luci-app-asterisk/{clean,compile} -j$(nproc) V=sc
           mv bin/packages/x86_64/base/ ../
           rm .config .config.old
           cd ..
